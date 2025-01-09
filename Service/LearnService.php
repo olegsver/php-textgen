@@ -11,7 +11,7 @@ class LearnService implements CommandServiceInterface
         $this->modelService = $modelService;
     }
 
-    private const DEFAULT_N_GRAM = 3;
+    public const DEFAULT_N_GRAM = 5;
 
     public function run(string $text): string
     {

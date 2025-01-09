@@ -16,8 +16,10 @@ class PredictService implements CommandServiceInterface
     public function run(string $text): string
     {
         // Check if the text is long enough to begin predictions
-        if (strlen($text) < 3) {
-            return "Input text must be at least 3 characters long for predictions.";
+        if (strlen($text) < LearnService::DEFAULT_N_GRAM) {
+            return sprintf(
+                "Input text must be at least %d characters long for predictions.", LearnService::DEFAULT_N_GRAM
+            );
         }
 
         // Perform iterative prediction
@@ -31,7 +33,7 @@ class PredictService implements CommandServiceInterface
 
     private function predictNext(string $text): string
     {
-        $n = 3; // Size of the n-gram, matching the training data
+        $n = LearnService::DEFAULT_N_GRAM; // Size of the n-gram, matching the training data
 
         // Ensure the input is at least $n characters long for prediction
         if (strlen($text) < $n) {
