@@ -16,8 +16,8 @@ To install and set up the bot, follow these steps:
 1. Clone or download the repository to your local machine.
 
     ```bash
-    git clone https://github.com/your-repo/text-prediction-bot.git
-    cd text-prediction-bot
+    git clone https://github.com/olegsver/php-textgen
+    cd php-textgen
     ```
 
 2. Install dependencies using Composer:
@@ -41,4 +41,11 @@ The **learn** command trains the model with the provided text. It generates n-gr
 **Usage:**
 
 ```bash
-php index.php learn "Your training text here"
+ php index.php learn "Hello, hello, hello, how low\nHello, hello, hello, how low\nHello, hello, hello, how low\nHello, hello, hello"
+Model trained and updated successfully.
+
+ php index.php predict "hel"
+Next text: 'hello, hello,'.
+
+php index.php predict "how"
+Next text: 'how low\nHell'.
