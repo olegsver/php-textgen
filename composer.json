@@ -1,0 +1,11 @@
+{
+    "require": {
+        "php-ai/php-ml": "^0.9.0",
+        "illuminate/container": "^8.83"
+    },
+    "autoload": {
+        "psr-4": {
+            "AI\\service\\": "Service"
+        }
+    }
+}
